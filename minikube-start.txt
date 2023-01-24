@@ -1,0 +1,9 @@
+minikube start --embed-certs \
+  --extra-config=apiserver.authorization-mode=RBAC \
+  --extra-config=apiserver.oidc-issuer-url=https://192.168.0.119:3000/realms/master \
+  --extra-config=apiserver.oidc-username-claim=name \
+  --extra-config=apiserver.oidc-client-id=kubernetes \
+  --extra-config=apiserver.oidc-groups-prefix=k8s 
+  
+  \
+  --extra-config=apiserver.oidc-ca-file=/etc/docker/certs.d/keycloak.pem
